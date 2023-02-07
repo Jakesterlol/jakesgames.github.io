@@ -1,2 +1,695 @@
-# jakesgames.github.io
-Jake's Games
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+.buttonMenu {
+  background-color: white; /* White */
+  border: 0px;
+  color: lime;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  border-radius: 99px;
+}
+
+li {
+    float: left;
+  }
+  
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(0, 0, 0);
+  }
+  
+  li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffcc00;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #a4a4a4;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+
+/* Full-width input fields */
+
+input[type=text], input[type=password] {
+
+ width: 100%;
+
+ padding: 12px 20px;
+
+ margin: 8px 0;
+
+ display: inline-block;
+
+ border: 1px solid #ccc;
+
+ box-sizing: border-box;
+
+}
+
+
+
+/* Set a style for all buttons */
+
+button {
+
+ background-color: white;
+
+ color: lime;
+
+ padding: 14px 20px;
+
+ margin: 8px 0;
+
+ border: none;
+
+ cursor: pointer;
+
+ width: 100%;
+
+}
+
+
+
+button:hover {
+
+ opacity: 0.8;
+
+}
+
+
+
+/* Extra styles for the cancel button */
+
+.cancelbtn {
+
+ width: auto;
+
+ padding: 10px 18px;
+
+ background-color: lime;
+
+}
+
+
+
+/* Center the image and position the close button */
+
+.imgcontainer {
+
+ text-align: center;
+
+ margin: 24px 0 12px 0;
+
+ position: relative;
+
+}
+
+
+
+img.avatar {
+
+ width: 40%;
+
+ border-radius: 50%;
+
+}
+
+
+
+.container {
+
+ padding: 16px;
+
+}
+
+
+
+span.psw {
+
+ float: right;
+
+ padding-top: 16px;
+
+}
+
+
+
+/* The Modal (background) */
+
+.modal {
+
+ display: none; /* Hidden by default */
+
+ position: fixed; /* Stay in place */
+
+ z-index: 1; /* Sit on top */
+
+ left: 0;
+
+ top: 0;
+
+ width: 100%; /* Full width */
+
+ height: 100%; /* Full height */
+
+ overflow: auto; /* Enable scroll if needed */
+
+ background-color: rgb(0,0,0); /* Fallback color */
+
+ background-color: black; /* Black w/ opacity */
+
+ padding-top: 60px;
+
+}
+
+/* The Modal (background) */
+
+.modal-error {
+
+ display: none; /* Hidden by default */
+
+ position: fixed; /* Stay in place */
+
+ z-index: 1; /* Sit on top */
+
+ left: 0;
+
+ top: 0;
+
+ width: 100%; /* Full width */
+
+ height: 100%; /* Full height */
+
+ overflow: auto; /* Enable scroll if needed */
+
+ background-color: lime; /* Fallback color */
+
+ background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+ padding-top: 60px;
+
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+
+ background-color: black;
+
+ margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+
+ border: 1px solid #888;
+
+ width: 1000px; /* Could be more or less, depending on screen size */
+
+}
+
+/* Modal Content/Box */
+
+.modal-content-error {
+
+background-color: black;
+
+margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+
+border: 1px solid #888;
+
+width: 1000px; /* Could be more or less, depending on screen size */
+
+border-radius: 30px;
+
+}
+
+/* The Close Button (x) */
+
+.close {
+
+ position: absolute;
+
+ right: 25px;
+
+ top: 0;
+
+ color: lime;
+
+ font-size: 35px;
+
+ font-weight: bold;
+
+}
+
+
+
+.close:hover,
+
+.close:focus {
+
+ color: lime;
+
+ cursor: pointer;
+
+}
+
+
+
+/* Add Zoom Animation */
+
+.animate {
+
+ -webkit-animation: animatezoom 0.6s;
+
+ animation: animatezoom 0.6s
+
+}
+
+
+
+@-webkit-keyframes animatezoom {
+
+ from {-webkit-transform: scale(0)}
+
+ to {-webkit-transform: scale(1)}
+
+}
+
+ @keyframes animatezoom {
+
+ from {transform: scale(0)}
+
+ to {transform: scale(1)}
+
+}
+
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
+
+ span.psw {
+
+    display: block;
+
+    float: none;
+
+ }
+
+ .cancelbtn {
+
+    width: 100%;
+
+ }
+
+}
+
+</style>
+
+</head>
+
+<body style="background-color: black;">
+
+   <p style="text-align: center;"> <button class="buttonMenu" onclick="document.getElementById('id00').style.display='block'" style="width:auto;">Menu</button></p>
+   <br><br>
+   <p style="text-align: center;color: lime">Information: This is made by Jake. If you run into issue, report them to my email.
+  Some games here work without internet. If you want to use games offline, load it up while connected to the internet, then you turn off
+your internet. Please note, this is a file, so you cannot view this in Securely. Please understand I am not responsible for any issues
+reguarding students abusing this. This tool is intended for personal, at-home use only.</p>
+      </div></li>
+
+      <div id="id00" class="modal">
+
+
+      
+         <div class="imgcontainer">
+      
+           <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
+      
+<h1 style="color:lime;font-family:'Arial';text-align: center">Admin Panel</h1>
+<h4 style="color:lime;font-family:'Arial';text-align: center">Enter Your Username</h4>
+<form>
+  <label for="pswd"></label>
+  <input type="password" id="pswd">
+  <input class="buttonMenu" value="Log In" onclick="checkPswd();">
+</form>
+<h4 style="color:red">This page is a little slow loading...</h4>
+<script type="text/javascript">
+  function checkPswd() {
+      var confirmPassword = "welcomerobber";
+      var password = document.getElementById("pswd").value;
+      if (password == confirmPassword) {
+           document.getElementById('id01').style.display='block';style="width:auto;";
+      }
+      else{
+          document.getElementById('id0Error').style.display='block';style="width:auto;";;
+      }
+  }
+</script>
+<h4 style="color:red">This page is a little slow loading...</h4>
+
+
+         </div>
+      
+       </form>
+      
+      </div>
+      
+      <script>
+      
+      // Get the modal
+      
+      var modal = document.getElementById('id00');
+      
+      
+      
+      // When the user clicks anywhere outside of the modal, close it
+      
+      window.onclick = function(event) {
+      
+         if (event.target == modal) {
+      
+             modal.style.display = "none";
+      
+         }
+      
+      }
+      
+      </script>
+
+<div id="id01" class="modal">
+
+
+
+   <div class="imgcontainer">
+
+     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+     <h1 style="text-align: center;color: lime">Jake's Game Menu</h1>
+     <br>
+     <br>
+     <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Slope</button>&nbsp;&nbsp;&nbsp;<button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Swerve</button>&nbsp;&nbsp;&nbsp;<button onclick="document.getElementById('id04').style.display='block'" style="width:auto;">Master Archer</button>
+
+
+   </div>
+
+ </form>
+
+</div>
+
+<script>
+
+// Get the modal
+
+var modal = document.getElementById('id01');
+
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+
+   if (event.target == modal) {
+
+       modal.style.display = "none";
+
+   }
+
+}
+
+</script>
+<div id="id02" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+  
+     <div class="imgcontainer">
+  
+       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  
+       <iframe src="https://script.google.com/a/macros/wcsc.k12.in.us/s/AKfycbxgYCjCS386leDDHz67N0zmhJ4OzxFviLXUGewFQpyFiIGeoqS7mCBy/exec" width="650" height="650">
+  
+     </iframe>
+  
+     </div>
+  
+   </form>
+  
+  </div>
+  
+  <script>
+  
+  // Get the modal
+  
+  var modal = document.getElementById('id02');
+  
+  
+  
+  // When the user clicks anywhere outside of the modal, close it
+  
+  window.onclick = function(event) {
+  
+     if (event.target == modal) {
+  
+         modal.style.display = "none";
+  
+     }
+  
+  }
+  
+  </script>
+  <div id="id03" class="modal">
+
+ 
+  
+     <div class="imgcontainer">
+  
+       <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+  
+       <iframe src="https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/VecAxR3e/index.html" width="650" height="650">
+  
+     </iframe>
+  
+     </div>
+  
+   </form>
+  
+  </div>
+  
+  <script>
+  
+  // Get the modal
+  
+  var modal = document.getElementById('id03');
+  
+  
+  
+  // When the user clicks anywhere outside of the modal, close it
+  
+  window.onclick = function(event) {
+  
+     if (event.target == modal) {
+  
+         modal.style.display = "none";
+  
+     }
+  
+  }
+  
+  </script>
+  <div id="id04" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+  
+     <div class="imgcontainer">
+  
+       <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+  
+       <iframe src="https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/OhRGQXcb/index.html" width="650" height="650">
+  
+     </iframe>
+  
+     </div>
+  
+   </form>
+  
+  </div>
+  
+  <script>
+  
+  // Get the modal
+  
+  var modal = document.getElementById('id04');
+  
+  
+  
+  // When the user clicks anywhere outside of the modal, close it
+  
+  window.onclick = function(event) {
+  
+     if (event.target == modal) {
+  
+         modal.style.display = "none";
+  
+     }
+  
+  }
+  
+  </script>
+ <div id="id05" class="modal">
+
+ 
+  
+  <div class="imgcontainer">
+
+    <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    <iframe src="https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/VecAxR3e/index.html" width="650" height="650">
+
+  </iframe>
+
+  </div>
+
+</form>
+
+</div>
+
+<script>
+
+// Get the modal
+
+var modal = document.getElementById('id05');
+
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+
+  if (event.target == modal) {
+
+      modal.style.display = "none";
+
+  }
+
+}
+
+</script>
+<div id="id04" class="modal">
+
+ <form class="modal-content animate" action="/action_page.php" method="post">
+
+  <div class="imgcontainer">
+
+    <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+    <iframe src="https://s3-eu-west-1.amazonaws.com/apps.playcanvas.com/OhRGQXcb/index.html" width="650" height="650">
+
+  </iframe>
+
+  </div>
+
+</form>
+
+</div>
+
+<script>
+
+// Get the modal
+
+var modal = document.getElementById('id04');
+
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+
+  if (event.target == modal) {
+
+      modal.style.display = "none";
+
+  }
+
+}
+</script>
+
+<div id="id0Error" class="modal-error">
+
+
+
+   <div class="imgcontainer">
+
+     <span onclick="document.getElementById('id0Error').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+
+<h2 style="color:#fefefe">Error, password is incorrect..</h2>
+
+
+   </div>
+
+ </form>
+
+</div>
+
+<script>
+
+// Get the modal
+
+var modal = document.getElementById('id0Error');
+
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+
+   if (event.target == modal) {
+
+       modal.style.display = "none";
+
+   }
+
+}
+
+</script>
+
+</body>
+</html>
